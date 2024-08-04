@@ -1,0 +1,218 @@
+# vsim alu_tb -c -do "run -all" 
+# Start time: 15:20:48 on May 12,2024
+# Loading work.alu_tb
+# Loading work.alu
+# Loading work.add_sub
+# Loading work.mul
+# Loading work.rem
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'add_sub_unit'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /alu_tb/DUT/add_sub_unit File: alu.v Line: 37
+# ** Warning: (vsim-3722) alu.v(37): [TFMPC] - Missing connection for port 'o_Z'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'mul_unit'.  Expected 4, found 3.
+#    Time: 0 ps  Iteration: 0  Instance: /alu_tb/DUT/mul_unit File: alu.v Line: 48
+# ** Warning: (vsim-3722) alu.v(48): [TFMPC] - Missing connection for port 'o_Z'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'rem_unit'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /alu_tb/DUT/rem_unit File: alu.v Line: 59
+# ** Warning: (vsim-3722) alu.v(59): [TFMPC] - Missing connection for port 'o_Z'.
+# run -all
+#         ================= ALU =================         
+# Pass A=111 , B=111 | A x B = result = 01001 | SF = 0, ZF = 0
+# Pass A=111 , B=111 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 0
+# Pass A=111 , B=111 | A + B = result = 10110 | SF = 1, ZF = 0
+# Pass A=111 , B=111 | A - B = result = 00000 | SF = 0, ZF = 1
+# Pass A=111 , B=110 | A x B = result = 00110 | SF = 0, ZF = 0
+# Pass A=111 , B=110 | A % B = result = 10001 | SF = 1, ZF = 0, DZF = 0
+# Pass A=111 , B=110 | A + B = result = 10101 | SF = 1, ZF = 0
+# Pass A=111 , B=110 | A - B = result = 10001 | SF = 1, ZF = 0
+# Pass A=111 , B=101 | A x B = result = 00011 | SF = 0, ZF = 0
+# Pass A=111 , B=101 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 0
+# Pass A=111 , B=101 | A + B = result = 10100 | SF = 1, ZF = 0
+# Pass A=111 , B=101 | A - B = result = 10010 | SF = 1, ZF = 0
+# Pass A=111 , B=000 | A x B = result = 10000 | SF = 1, ZF = 1
+# Pass A=111 , B=000 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 1
+# Pass A=111 , B=000 | A + B = result = 10011 | SF = 1, ZF = 0
+# Pass A=111 , B=000 | A - B = result = 10011 | SF = 1, ZF = 0
+# Pass A=111 , B=001 | A x B = result = 10011 | SF = 1, ZF = 0
+# Pass A=111 , B=001 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 0
+# Pass A=111 , B=001 | A + B = result = 10010 | SF = 1, ZF = 0
+# Pass A=111 , B=001 | A - B = result = 10100 | SF = 1, ZF = 0
+# Pass A=111 , B=010 | A x B = result = 10110 | SF = 1, ZF = 0
+# Pass A=111 , B=010 | A % B = result = 10001 | SF = 1, ZF = 0, DZF = 0
+# Pass A=111 , B=010 | A + B = result = 10001 | SF = 1, ZF = 0
+# Pass A=111 , B=010 | A - B = result = 10101 | SF = 1, ZF = 0
+# Pass A=111 , B=011 | A x B = result = 11001 | SF = 1, ZF = 0
+# Pass A=111 , B=011 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 0
+# Pass A=111 , B=011 | A + B = result = 00000 | SF = 0, ZF = 1
+# Pass A=111 , B=011 | A - B = result = 10110 | SF = 1, ZF = 0
+# Pass A=110 , B=111 | A x B = result = 00110 | SF = 0, ZF = 0
+# Pass A=110 , B=111 | A % B = result = 10010 | SF = 1, ZF = 0, DZF = 0
+# Pass A=110 , B=111 | A + B = result = 10101 | SF = 1, ZF = 0
+# Pass A=110 , B=111 | A - B = result = 00001 | SF = 0, ZF = 0
+# Pass A=110 , B=110 | A x B = result = 00100 | SF = 0, ZF = 0
+# Pass A=110 , B=110 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 0
+# Pass A=110 , B=110 | A + B = result = 10100 | SF = 1, ZF = 0
+# Pass A=110 , B=110 | A - B = result = 00000 | SF = 0, ZF = 1
+# Pass A=110 , B=101 | A x B = result = 00010 | SF = 0, ZF = 0
+# Pass A=110 , B=101 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 0
+# Pass A=110 , B=101 | A + B = result = 10011 | SF = 1, ZF = 0
+# Pass A=110 , B=101 | A - B = result = 10001 | SF = 1, ZF = 0
+# Pass A=110 , B=000 | A x B = result = 10000 | SF = 1, ZF = 1
+# Pass A=110 , B=000 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 1
+# Pass A=110 , B=000 | A + B = result = 10010 | SF = 1, ZF = 0
+# Pass A=110 , B=000 | A - B = result = 10010 | SF = 1, ZF = 0
+# Pass A=110 , B=001 | A x B = result = 10010 | SF = 1, ZF = 0
+# Pass A=110 , B=001 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 0
+# Pass A=110 , B=001 | A + B = result = 10001 | SF = 1, ZF = 0
+# Pass A=110 , B=001 | A - B = result = 10011 | SF = 1, ZF = 0
+# Pass A=110 , B=010 | A x B = result = 10100 | SF = 1, ZF = 0
+# Pass A=110 , B=010 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 0
+# Pass A=110 , B=010 | A + B = result = 00000 | SF = 0, ZF = 1
+# Pass A=110 , B=010 | A - B = result = 10100 | SF = 1, ZF = 0
+# Pass A=110 , B=011 | A x B = result = 10110 | SF = 1, ZF = 0
+# Pass A=110 , B=011 | A % B = result = 10010 | SF = 1, ZF = 0, DZF = 0
+# Pass A=110 , B=011 | A + B = result = 00001 | SF = 0, ZF = 0
+# Pass A=110 , B=011 | A - B = result = 10101 | SF = 1, ZF = 0
+# Pass A=101 , B=111 | A x B = result = 00011 | SF = 0, ZF = 0
+# Pass A=101 , B=111 | A % B = result = 10001 | SF = 1, ZF = 0, DZF = 0
+# Pass A=101 , B=111 | A + B = result = 10100 | SF = 1, ZF = 0
+# Pass A=101 , B=111 | A - B = result = 00010 | SF = 0, ZF = 0
+# Pass A=101 , B=110 | A x B = result = 00010 | SF = 0, ZF = 0
+# Pass A=101 , B=110 | A % B = result = 10001 | SF = 1, ZF = 0, DZF = 0
+# Pass A=101 , B=110 | A + B = result = 10011 | SF = 1, ZF = 0
+# Pass A=101 , B=110 | A - B = result = 00001 | SF = 0, ZF = 0
+# Pass A=101 , B=101 | A x B = result = 00001 | SF = 0, ZF = 0
+# Pass A=101 , B=101 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 0
+# Pass A=101 , B=101 | A + B = result = 10010 | SF = 1, ZF = 0
+# Pass A=101 , B=101 | A - B = result = 00000 | SF = 0, ZF = 1
+# Pass A=101 , B=000 | A x B = result = 10000 | SF = 1, ZF = 1
+# Pass A=101 , B=000 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 1
+# Pass A=101 , B=000 | A + B = result = 10001 | SF = 1, ZF = 0
+# Pass A=101 , B=000 | A - B = result = 10001 | SF = 1, ZF = 0
+# Pass A=101 , B=001 | A x B = result = 10001 | SF = 1, ZF = 0
+# Pass A=101 , B=001 | A % B = result = 10000 | SF = 1, ZF = 1, DZF = 0
+# Pass A=101 , B=001 | A + B = result = 00000 | SF = 0, ZF = 1
+# Pass A=101 , B=001 | A - B = result = 10010 | SF = 1, ZF = 0
+# Pass A=101 , B=010 | A x B = result = 10010 | SF = 1, ZF = 0
+# Pass A=101 , B=010 | A % B = result = 10001 | SF = 1, ZF = 0, DZF = 0
+# Pass A=101 , B=010 | A + B = result = 00001 | SF = 0, ZF = 0
+# Pass A=101 , B=010 | A - B = result = 10011 | SF = 1, ZF = 0
+# Pass A=101 , B=011 | A x B = result = 10011 | SF = 1, ZF = 0
+# Pass A=101 , B=011 | A % B = result = 10001 | SF = 1, ZF = 0, DZF = 0
+# Pass A=101 , B=011 | A + B = result = 00010 | SF = 0, ZF = 0
+# Pass A=101 , B=011 | A - B = result = 10100 | SF = 1, ZF = 0
+# Pass A=000 , B=111 | A x B = result = 10000 | SF = 1, ZF = 1
+# Pass A=000 , B=111 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=000 , B=111 | A + B = result = 10011 | SF = 1, ZF = 0
+# Pass A=000 , B=111 | A - B = result = 00011 | SF = 0, ZF = 0
+# Pass A=000 , B=110 | A x B = result = 10000 | SF = 1, ZF = 1
+# Pass A=000 , B=110 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=000 , B=110 | A + B = result = 10010 | SF = 1, ZF = 0
+# Pass A=000 , B=110 | A - B = result = 00010 | SF = 0, ZF = 0
+# Pass A=000 , B=101 | A x B = result = 10000 | SF = 1, ZF = 1
+# Pass A=000 , B=101 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=000 , B=101 | A + B = result = 10001 | SF = 1, ZF = 0
+# Pass A=000 , B=101 | A - B = result = 00001 | SF = 0, ZF = 0
+# Pass A=000 , B=000 | A x B = result = 00000 | SF = 0, ZF = 1
+# Pass A=000 , B=000 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 1
+# Pass A=000 , B=000 | A + B = result = 00000 | SF = 0, ZF = 1
+# Pass A=000 , B=000 | A - B = result = 00000 | SF = 0, ZF = 1
+# Pass A=000 , B=001 | A x B = result = 00000 | SF = 0, ZF = 1
+# Pass A=000 , B=001 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=000 , B=001 | A + B = result = 00001 | SF = 0, ZF = 0
+# Pass A=000 , B=001 | A - B = result = 10001 | SF = 1, ZF = 0
+# Pass A=000 , B=010 | A x B = result = 00000 | SF = 0, ZF = 1
+# Pass A=000 , B=010 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=000 , B=010 | A + B = result = 00010 | SF = 0, ZF = 0
+# Pass A=000 , B=010 | A - B = result = 10010 | SF = 1, ZF = 0
+# Pass A=000 , B=011 | A x B = result = 00000 | SF = 0, ZF = 1
+# Pass A=000 , B=011 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=000 , B=011 | A + B = result = 00011 | SF = 0, ZF = 0
+# Pass A=000 , B=011 | A - B = result = 10011 | SF = 1, ZF = 0
+# Pass A=001 , B=111 | A x B = result = 10011 | SF = 1, ZF = 0
+# Pass A=001 , B=111 | A % B = result = 00001 | SF = 0, ZF = 0, DZF = 0
+# Pass A=001 , B=111 | A + B = result = 10010 | SF = 1, ZF = 0
+# Pass A=001 , B=111 | A - B = result = 00100 | SF = 0, ZF = 0
+# Pass A=001 , B=110 | A x B = result = 10010 | SF = 1, ZF = 0
+# Pass A=001 , B=110 | A % B = result = 00001 | SF = 0, ZF = 0, DZF = 0
+# Pass A=001 , B=110 | A + B = result = 10001 | SF = 1, ZF = 0
+# Pass A=001 , B=110 | A - B = result = 00011 | SF = 0, ZF = 0
+# Pass A=001 , B=101 | A x B = result = 10001 | SF = 1, ZF = 0
+# Pass A=001 , B=101 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=001 , B=101 | A + B = result = 00000 | SF = 0, ZF = 1
+# Pass A=001 , B=101 | A - B = result = 00010 | SF = 0, ZF = 0
+# Pass A=001 , B=000 | A x B = result = 00000 | SF = 0, ZF = 1
+# Pass A=001 , B=000 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 1
+# Pass A=001 , B=000 | A + B = result = 00001 | SF = 0, ZF = 0
+# Pass A=001 , B=000 | A - B = result = 00001 | SF = 0, ZF = 0
+# Pass A=001 , B=001 | A x B = result = 00001 | SF = 0, ZF = 0
+# Pass A=001 , B=001 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=001 , B=001 | A + B = result = 00010 | SF = 0, ZF = 0
+# Pass A=001 , B=001 | A - B = result = 00000 | SF = 0, ZF = 1
+# Pass A=001 , B=010 | A x B = result = 00010 | SF = 0, ZF = 0
+# Pass A=001 , B=010 | A % B = result = 00001 | SF = 0, ZF = 0, DZF = 0
+# Pass A=001 , B=010 | A + B = result = 00011 | SF = 0, ZF = 0
+# Pass A=001 , B=010 | A - B = result = 10001 | SF = 1, ZF = 0
+# Pass A=001 , B=011 | A x B = result = 00011 | SF = 0, ZF = 0
+# Pass A=001 , B=011 | A % B = result = 00001 | SF = 0, ZF = 0, DZF = 0
+# Pass A=001 , B=011 | A + B = result = 00100 | SF = 0, ZF = 0
+# Pass A=001 , B=011 | A - B = result = 10010 | SF = 1, ZF = 0
+# Pass A=010 , B=111 | A x B = result = 10110 | SF = 1, ZF = 0
+# Pass A=010 , B=111 | A % B = result = 00010 | SF = 0, ZF = 0, DZF = 0
+# Pass A=010 , B=111 | A + B = result = 10001 | SF = 1, ZF = 0
+# Pass A=010 , B=111 | A - B = result = 00101 | SF = 0, ZF = 0
+# Pass A=010 , B=110 | A x B = result = 10100 | SF = 1, ZF = 0
+# Pass A=010 , B=110 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=010 , B=110 | A + B = result = 00000 | SF = 0, ZF = 1
+# Pass A=010 , B=110 | A - B = result = 00100 | SF = 0, ZF = 0
+# Pass A=010 , B=101 | A x B = result = 10010 | SF = 1, ZF = 0
+# Pass A=010 , B=101 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=010 , B=101 | A + B = result = 00001 | SF = 0, ZF = 0
+# Pass A=010 , B=101 | A - B = result = 00011 | SF = 0, ZF = 0
+# Pass A=010 , B=000 | A x B = result = 00000 | SF = 0, ZF = 1
+# Pass A=010 , B=000 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 1
+# Pass A=010 , B=000 | A + B = result = 00010 | SF = 0, ZF = 0
+# Pass A=010 , B=000 | A - B = result = 00010 | SF = 0, ZF = 0
+# Pass A=010 , B=001 | A x B = result = 00010 | SF = 0, ZF = 0
+# Pass A=010 , B=001 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=010 , B=001 | A + B = result = 00011 | SF = 0, ZF = 0
+# Pass A=010 , B=001 | A - B = result = 00001 | SF = 0, ZF = 0
+# Pass A=010 , B=010 | A x B = result = 00100 | SF = 0, ZF = 0
+# Pass A=010 , B=010 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=010 , B=010 | A + B = result = 00100 | SF = 0, ZF = 0
+# Pass A=010 , B=010 | A - B = result = 00000 | SF = 0, ZF = 1
+# Pass A=010 , B=011 | A x B = result = 00110 | SF = 0, ZF = 0
+# Pass A=010 , B=011 | A % B = result = 00010 | SF = 0, ZF = 0, DZF = 0
+# Pass A=010 , B=011 | A + B = result = 00101 | SF = 0, ZF = 0
+# Pass A=010 , B=011 | A - B = result = 10001 | SF = 1, ZF = 0
+# Pass A=011 , B=111 | A x B = result = 11001 | SF = 1, ZF = 0
+# Pass A=011 , B=111 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=011 , B=111 | A + B = result = 00000 | SF = 0, ZF = 1
+# Pass A=011 , B=111 | A - B = result = 00110 | SF = 0, ZF = 0
+# Pass A=011 , B=110 | A x B = result = 10110 | SF = 1, ZF = 0
+# Pass A=011 , B=110 | A % B = result = 00001 | SF = 0, ZF = 0, DZF = 0
+# Pass A=011 , B=110 | A + B = result = 00001 | SF = 0, ZF = 0
+# Pass A=011 , B=110 | A - B = result = 00101 | SF = 0, ZF = 0
+# Pass A=011 , B=101 | A x B = result = 10011 | SF = 1, ZF = 0
+# Pass A=011 , B=101 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=011 , B=101 | A + B = result = 00010 | SF = 0, ZF = 0
+# Pass A=011 , B=101 | A - B = result = 00100 | SF = 0, ZF = 0
+# Pass A=011 , B=000 | A x B = result = 00000 | SF = 0, ZF = 1
+# Pass A=011 , B=000 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 1
+# Pass A=011 , B=000 | A + B = result = 00011 | SF = 0, ZF = 0
+# Pass A=011 , B=000 | A - B = result = 00011 | SF = 0, ZF = 0
+# Pass A=011 , B=001 | A x B = result = 00011 | SF = 0, ZF = 0
+# Pass A=011 , B=001 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=011 , B=001 | A + B = result = 00100 | SF = 0, ZF = 0
+# Pass A=011 , B=001 | A - B = result = 00010 | SF = 0, ZF = 0
+# Pass A=011 , B=010 | A x B = result = 00110 | SF = 0, ZF = 0
+# Pass A=011 , B=010 | A % B = result = 00001 | SF = 0, ZF = 0, DZF = 0
+# Pass A=011 , B=010 | A + B = result = 00101 | SF = 0, ZF = 0
+# Pass A=011 , B=010 | A - B = result = 00001 | SF = 0, ZF = 0
+# Pass A=011 , B=011 | A x B = result = 01001 | SF = 0, ZF = 0
+# Pass A=011 , B=011 | A % B = result = 00000 | SF = 0, ZF = 1, DZF = 0
+# Pass A=011 , B=011 | A + B = result = 00110 | SF = 0, ZF = 0
+# Pass A=011 , B=011 | A - B = result = 00000 | SF = 0, ZF = 1
+# ** Note: $finish    : alu_tb.v(331)
+#    Time: 4900 ns  Iteration: 0  Instance: /alu_tb
+# End time: 15:20:48 on May 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 6
